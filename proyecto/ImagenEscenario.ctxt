@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ImagenEscenario()
+comment0.text=\r\n\ Act\ -\ hace\ lo\ que\ imagenFondo\ quiere\ hacer.\ Este\ m\u00E9todo\ se\ llama\ "cuando\ quiera"\ o\ whenever\r\n\ los\ botones\ 'Actuar\ or\ 'Ejecutar'\ son\ presionados\ en\ el\ entorno.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ este\ metodo\ se\ utiliza\ para\ que\ el\ objeto\ se\ mueva\ \r\n
+numComments=2

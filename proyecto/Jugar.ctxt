@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Jugar()
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\ \r\n\ este\ metodo\ se\ utiliza\ para\ que\ el\ objeto\ se\ mueva\ el\ actor\ \r\n\ con\ las\ indicaciones\ que\ le\ de\ el\ jugador\r\n
+numComments=2

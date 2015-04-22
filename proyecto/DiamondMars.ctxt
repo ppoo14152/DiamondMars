@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=
+comment0.target=DiamondMars()
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\ \r\n\ actua\ del\ mundo,\ donde\ los\ objetos\ que\ tienen\ un\ movimiento\ aleatorio\ o\ en\ cierta\ posicion\ se\ crean.\r\n
+comment2.params=
+comment2.target=int\ getNivel()
+comment2.text=\ \r\n\ metodo\ para\ poder\ acceder\ al\ nivel\ que\ es\ privado\r\n\ \r\n\ @return\ int\ nivel\r\n
+comment3.params=
+comment3.target=Contador\ getPuntos()
+comment4.params=
+comment4.target=Contador\ getVidas()
+comment5.params=
+comment5.target=void\ cambiaNivel()
+comment5.text=\r\n\ \ metodo\ para\ cambiar\ el\ nivel\ al\ interactuar\ con\ el\ menu\ \r\n
+comment6.params=
+comment6.target=void\ stopped()
+numComments=7

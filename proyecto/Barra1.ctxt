@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Barra1()
+comment0.text=\r\n\ Act\ -\ hace\ lo\ que\ Pi\u00F1aPodrida\ quiere\ hacer.\ Este\ m\u00E9todo\ se\ llama\ "cuando\ quiera"\ o\ whenever\r\n\ los\ botones\ 'Actuar\ or\ 'Ejecutar'\ son\ presionados\ en\ el\ entorno.\r\n\ metodo\ donde\ se\ inicializa\ la\ imagen\ de\ este\ actor\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ metodo\ para\ llamar\ al\ contructor\ de\ la\ clase\ padre\r\n
+numComments=2
