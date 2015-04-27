@@ -6,8 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @autor (tu nombre) 
  * @versión (Un número de versión o una fecha)
  */
-public class Fuego extends Enemigos
-{
+public class Fuego extends Enemigo{
     /**
      * Act - hace lo que Fuego quiere hacer. Este método se llama "cuando quiera" o whenever
      * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
@@ -16,7 +15,7 @@ public class Fuego extends Enemigos
     public Fuego()
     {
         GreenfootImage imagen = new GreenfootImage("fuego.gif");
-        imagen.scale(imagen.getWidth(),imagen.getHeight());
+        //agen.scale(imagen.getWidth(),imagen.getHeight());
         setImage(imagen);
     }
     

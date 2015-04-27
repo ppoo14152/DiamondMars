@@ -24,6 +24,9 @@ public class DiamondMars extends World
     private int nivel;
     private Contador pts;
     private int numBarra;
+    private int numGema5;
+    //private int numGema10;
+    
    
     
     public DiamondMars()
@@ -54,6 +57,7 @@ public class DiamondMars extends World
        abreNivel1=false;
        barraCreada=false;
        numBarra=0;
+       numGema5=0;
        
     }
     
@@ -69,9 +73,16 @@ public class DiamondMars extends World
             tiempo.mark();
             cadReloj.add(-1);
             numBarra++;
-            if(numBarra==4){
-               addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-100);
+            numGema5++;
+            
+            if(numBarra==2){
+               addObject(new Barra1(),getWidth()+getWidth()/2,getHeight()-30);
+               addObject(new Barra1(),getWidth()+getWidth()/6,getHeight()-400);
                numBarra=0;
+            }
+            if(numGema5==2){
+                addObject(new Gema5(), getWidth()+getWidth()/5, getHeight()-250);
+                numGema5=0;
             }
             
           }
@@ -88,10 +99,10 @@ public class DiamondMars extends World
         if(nivel==1 && abreNivel1==false)
         {
            Fuego f1=new Fuego();
+           
            addObject(f1,400,getHeight()/3);
           addObject(new Marvin(),getWidth()/2-getWidth()/4,getHeight()/2+getHeight()/4);//Se añade Marvin
           addObject(new Barra1(),getWidth()/2-getWidth()/4,getHeight()-20);//Se inicializa la barra debajo de Marvin
-          //addObject(new Barra2(),getWidth()-getWidth()/2,getHeight()-200);//Se posiciona la segunda barra
           addObject(cadVidas,100,30);
           addObject(cadReloj,220,30);
           addObject(cadPuntos,340,30);

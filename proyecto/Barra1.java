@@ -10,14 +10,14 @@ public class Barra1 extends ImagenEscenario
 {
    
     /**
-     * Act - hace lo que PiñaPodrida quiere hacer. Este método se llama "cuando quiera" o whenever
+     * Act - hace lo que Barra1 quiere hacer. Este método se llama "cuando quiera" o whenever
      * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
      * metodo donde se inicializa la imagen de este actor
      */
     public Barra1()
     {
        GreenfootImage imgBarra = new GreenfootImage("Barra_Magia_Ocarina_of_Time.png");
-       imgBarra.scale(imgBarra.getWidth(), imgBarra.getHeight());
+       imgBarra.scale(imgBarra.getWidth()*2, imgBarra.getHeight());
        setImage(imgBarra);
     }
     

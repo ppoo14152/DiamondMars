@@ -63,11 +63,10 @@ public class Marvin extends Actor
            saltar();
          }
         if(getY()>=550)//Checa si Marvin cayó de la barra
-         {  
-             setLocation(getWorld().getWidth()/2,getWorld().getHeight()/2+getWorld().getHeight()/4);//Indica la nueva posicion despues de que Marvin caiga
-             getWorld().addObject(new Barra1(),getWorld().getWidth()/3+getWorld().getWidth()/4,getWorld().getHeight()-30);//Indica la posicion de las Barras (piso)
-             ((DiamondMars)getWorld()).getVidas().add(-1);//Decrementa Vidas
-        }
+         { 
+             Greenfoot.stop();
+             
+          }
         
         
       }
@@ -81,7 +80,7 @@ public class Marvin extends Actor
       
       public boolean onGround()
       {
-         if(!isTouching(Barra1.class)&&(!isTouching(Barra2.class)))//Si NO esta tocando el piso
+         if(!isTouching(Barra1.class))//Si NO esta tocando el piso
          {
              return false;
             }else
