@@ -14,8 +14,8 @@ public class Gema5 extends Gema
      */
     public Gema5()
     {
-        GreenfootImage imagen = new GreenfootImage("gema3.gif");
-        setImage(imagen);
+        GifImage imagen = new GifImage("gema3.gif");
+     
     }
     public void act() 
     {

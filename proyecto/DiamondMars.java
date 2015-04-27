@@ -44,12 +44,12 @@ public class DiamondMars extends World
         
         //CONTADOR DE VIDAS
         vidasT=new SimpleTimer();//vidas
-        cadVidas=new Contador("Vidas:  ");
+        cadVidas=new Contador("Vidas <3:  ");
         cadVidas.setValue(3);//CUENTA CON 3 VIDAS
         
         //CONTADOR DE PUNTOS
         puntosT=new SimpleTimer();//puntos
-        cadPuntos=new Contador("Puntos:  ");
+        cadPuntos=new Contador("Puntaje:  ");
         cadPuntos.setValue(0);
         
         //SE INICIALIZAN BANDERAS 
@@ -76,12 +76,12 @@ public class DiamondMars extends World
             numGema5++;
             
             if(numBarra==2){
-               addObject(new Barra1(),getWidth()+getWidth()/2,getHeight()-30);
-               addObject(new Barra1(),getWidth()+getWidth()/6,getHeight()-400);
+               addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-30);
+               addObject(new Barra1(),getWidth()+getWidth()/3,getHeight()-380);
                numBarra=0;
             }
             if(numGema5==2){
-                addObject(new Gema5(), getWidth()+getWidth()/5, getHeight()-250);
+                addObject(new Gema5(), getWidth()+getWidth()/5, getHeight()-200);
                 numGema5=0;
             }
             
@@ -104,8 +104,8 @@ public class DiamondMars extends World
           addObject(new Marvin(),getWidth()/2-getWidth()/4,getHeight()/2+getHeight()/4);//Se añade Marvin
           addObject(new Barra1(),getWidth()/2-getWidth()/4,getHeight()-20);//Se inicializa la barra debajo de Marvin
           addObject(cadVidas,100,30);
-          addObject(cadReloj,220,30);
-          addObject(cadPuntos,340,30);
+          addObject(cadReloj,100,70);
+          addObject(cadPuntos,100,110);
           abreNivel1=true;//para que se realice solo una vez esta accion
         }
       

@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Marvin extends Actor
 {
     private int vel=10;
-    private int velSalto=40;
+    private int velSalto=30;
     private int acel;
     private boolean salto;
     private int jump;

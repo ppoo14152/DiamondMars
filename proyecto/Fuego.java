@@ -25,5 +25,10 @@ public class Fuego extends Enemigo{
     public void act() 
     {
         super.act();
+         if(isTouching(Marvin.class)){
+            ((DiamondMars)getWorld()).getVidas().add(-1);
+            getWorld().removeObject(this);
+            
+        }
     }
 }
