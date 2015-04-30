@@ -1,20 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Gema here.
+ * Write a description of class Enemigo here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Gema extends Actor
+public class Enemigo extends Actor
 {
-    /**
-     * Act - do whatever the Gema wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private boolean choca=false;
+    
     public void act() 
     {
-          if(Greenfoot.isKeyDown("left"))
+         if(Greenfoot.isKeyDown("left"))
         {
             setLocation(getX()+10,getY());
         }
@@ -22,7 +20,6 @@ public class Gema extends Actor
         {
             setLocation(getX()-10,getY());
         }
-            
-   }
-   
-}
+       
+    }    
+  }    

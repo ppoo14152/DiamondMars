@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=unaCad
+comment0.target=Titulo(java.lang.String)
+comment0.text=\r\n\ El\ contructor,\ recibira\ una\ cadena\ como\ imagen\r\n\ @param\ unaCad\ cadena\ con\ el\ mensaje\ que\ se\ mostrar\u00E1\r\n
+comment1.params=
+comment1.target=Titulo()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Titulo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=3

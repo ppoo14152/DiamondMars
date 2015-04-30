@@ -6,7 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @autor (tu nombre) 
  * @versión (Un número de versión o una fecha)
  */
-public class Fuego extends Enemigo{
+public class Fuego extends Enemigo
+{
+    private GreenfootImage fuego1;
     /**
      * Act - hace lo que Fuego quiere hacer. Este método se llama "cuando quiera" o whenever
      * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.

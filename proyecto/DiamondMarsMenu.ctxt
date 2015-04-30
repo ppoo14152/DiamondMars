@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=DiamondMarsMenu()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ DiamondMarsMenu.\ Posiciona\ los\ botones\ del\ men\u00FA\r\n\ \r\n
+comment1.params=
+comment1.target=void\ posiciona()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ El\ m\u00E9todo\ actua\ checa\ si\ se\ presionan\ los\ botones\ del\ menu\ y\ las\ acciones\ posteriores\ a\ dicha\ acci\u00F3n.\r\n
+numComments=3
