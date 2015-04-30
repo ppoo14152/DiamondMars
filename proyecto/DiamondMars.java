@@ -160,6 +160,7 @@ public class DiamondMars extends World
             }
         }
         
+        
       
         if(nivel==2 && tiempo.millisElapsed()>=1000){
             numBarra++;

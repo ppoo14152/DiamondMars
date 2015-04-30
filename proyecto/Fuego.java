@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Fuego extends Enemigo
 {
     private GreenfootImage fuego1;
+    private GreenfootSound quema;
     /**
      * Act - hace lo que Fuego quiere hacer. Este método se llama "cuando quiera" o whenever
      * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
@@ -17,7 +18,7 @@ public class Fuego extends Enemigo
     public Fuego()
     {
         GreenfootImage imagen = new GreenfootImage("fuego.gif");
-        //agen.scale(imagen.getWidth(),imagen.getHeight());
+        quema=new GreenfootSound("clic.mp3");
         setImage(imagen);
     }
     
@@ -28,6 +29,8 @@ public class Fuego extends Enemigo
     {
         super.act();
          if(isTouching(Marvin.class)){
+             quema.play();
+             quema.setVolume(50);
             ((DiamondMars)getWorld()).getVidas().add(-1);
             getWorld().removeObject(this);
             

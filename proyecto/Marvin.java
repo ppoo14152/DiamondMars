@@ -17,6 +17,7 @@ public class Marvin extends Actor
     private int pts;
     private int vidas;
     private GreenfootImage mar= new GreenfootImage("marvinnave.gif");
+    private GreenfootSound take;
     /**
      * metodo constructor de Marvin, en el se especifican las variables
      * de las cuales depende el comportamiento de Marvin
@@ -29,6 +30,7 @@ public class Marvin extends Actor
        jump=10;
        pts=0;
        vidas=3;
+       take=new GreenfootSound("disparolaser.mp3");
        
        
     }
@@ -55,16 +57,19 @@ public class Marvin extends Actor
    public void tomaGemas()
    {
        if(this.isTouching(Gema5.class)){
+           take.play();
            pts+=5;
            removeTouching(Gema5.class);
         }
        
        if(this.isTouching(gema10.class)){
+           take.play();
            pts+=10;
            removeTouching(gema10.class);
         }
         
        if(this.isTouching(gema20.class)){
+           take.play();
            pts+=20;
            removeTouching(gema20.class);
         }
