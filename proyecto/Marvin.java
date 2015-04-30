@@ -111,7 +111,8 @@ public class Marvin extends Actor
            saltar();
          }
         if(getY()>=550){//Checa si Marvin cayó de la barra{ 
-             ((DiamondMars)getWorld()).fin();//Greenfoot.stop();
+             //((DiamondMars)getWorld()).stopped();//
+             Greenfoot.stop();
              
           }
     

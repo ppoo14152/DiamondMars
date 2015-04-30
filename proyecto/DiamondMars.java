@@ -38,6 +38,7 @@ public class DiamondMars extends World
      * del juego.
      */
 
+    
     public DiamondMars()
     { 
         super(TAM_X,TAM_Y, 1,false);
@@ -50,7 +51,9 @@ public class DiamondMars extends World
         b1= new Barra1();
         fuego1= new Fuego();
         g5= new Gema5();
-                
+        g20=new gema20(); 
+        g10=new gema10();
+        
         tiempo=new SimpleTimer();//tiempo
         cadReloj=new Counter("Tiempo:  ");
         cadReloj.setValue(60);//valor inicial de 60 segundos
@@ -88,11 +91,13 @@ public class DiamondMars extends World
         addObject(marvin,100,400);
         addObject(fuego1,getWidth()-getWidth()/7,getHeight()-90);
         addObject(g5,Greenfoot.getRandomNumber(780),250);
+        addObject(g10,Greenfoot.getRandomNumber(780),200);
+        addObject(g20,Greenfoot.getRandomNumber(780),350);
         addObject(b1, 200,490);
         addObject(b1,300,480);
         addObject(cadVidas,100,30);
-        addObject(cadReloj,100,70);
-        addObject(cadPuntos,100,110);
+        addObject(cadReloj,200,30);
+        addObject(cadPuntos,325,30);
         tiempo.mark();
         cadReloj.add(-1);
         nivel=1;
@@ -119,7 +124,7 @@ public class DiamondMars extends World
               
               if(numBarra==2){
                 addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-30);
-                addObject(new Barra1(),getWidth()+getWidth()/3,getHeight()-300);
+                addObject(new Barra1(),getWidth()+getWidth()/3,getHeight()-400);
                 numBarra=0;
               }
               
@@ -153,9 +158,9 @@ public class DiamondMars extends World
                 //nivel=2;
                 
             }
-    }
+        }
         
-
+      
         if(nivel==2 && tiempo.millisElapsed()>=1000){
             numBarra++;
             numGema10++;
@@ -167,16 +172,16 @@ public class DiamondMars extends World
             
             if(numBarra==2){
                 addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-30);
-                addObject(new Barra1(),getWidth()+getWidth()/3,getHeight()-380);
+                addObject(new Barra1(),getWidth()+getWidth()/2,getHeight()-380);
                 numBarra=0;
             }
             
-            if(numGema10==1){
-                addObject(new gema10(),Greenfoot.getRandomNumber(790), getHeight()-200);
+            if(numGema10==3){
+                addObject(g10,Greenfoot.getRandomNumber(790), getHeight()-200);
                 numGema10=0;
             }
             
-            if(numGema20==1){
+            if(numGema20==0){
                 addObject(new gema20(), Greenfoot.getRandomNumber(780),getHeight()-280);
                 numGema20=0;
             }
