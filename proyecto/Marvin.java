@@ -16,6 +16,7 @@ public class Marvin extends Actor
     private int tiempo;
     private int pts;
     private int vidas;
+    private Enemy2 e2;
     private GreenfootImage mar= new GreenfootImage("marvinnave.gif");
     private GreenfootSound take;
     /**
@@ -72,6 +73,12 @@ public class Marvin extends Actor
            take.play();
            pts+=20;
            removeTouching(gema20.class);
+        }
+        
+        if(this.isTouching(Enemy2.class)){//(Enemy2.class)){
+            pts-=20;
+            removeTouching(Enemy2.class);
+        
         }
     }
     

@@ -13,6 +13,7 @@ public class DiamondMars extends World
     public static final int TAM_Y=500;
     private Marvin marvin;
     private Fuego fuego1;
+    private Enemy2 enemigo2;
     private Barra1 b1;
     private Gema5 g5;
     private gema10 g10;
@@ -30,8 +31,11 @@ public class DiamondMars extends World
     private int numGema10;
     private int numGema20;
     private int numFuego;
+    private int numEnem2;
     private GreenfootSound musicFondo;
     private GreenfootSound finGame;
+    private Titulo nivel2;
+    private Titulo nivel3;
 
     /**
      * En el constructor se inicializan los objetos que conforman el escenario
@@ -50,6 +54,7 @@ public class DiamondMars extends World
         marvin= new Marvin(); 
         b1= new Barra1();
         fuego1= new Fuego();
+        enemigo2= new Enemy2();
         g5= new Gema5();
         g20=new gema20(); 
         g10=new gema10();
@@ -65,12 +70,13 @@ public class DiamondMars extends World
         puntosT=new SimpleTimer();//puntos
         cadPuntos=new Counter("Puntaje:  ");
         cadPuntos.setValue(0);
-        
-        numBarra=0;
+        nivel2= new Titulo("Nivel 2");
+      numBarra=0;
         numGema5=0;
         numGema10=0;
         numGema20=0;
         numFuego=0;
+        numEnem2=0;
          
         prepare();
         atras=new Atras();
@@ -101,6 +107,13 @@ public class DiamondMars extends World
         tiempo.mark();
         cadReloj.add(-1);
         nivel=1;
+           if(cadPuntos.getValue()>=100){
+        
+            addObject(nivel2, getWidth()/2, getHeight()/2);
+            Greenfoot.delay(200);
+            removeObject(nivel2);        
+        }
+           
     }   
     
 
@@ -110,6 +123,8 @@ public class DiamondMars extends World
      */
     public void act()
     { 
+        GreenfootImage back2= new GreenfootImage("mars.jpg");
+        GreenfootImage back3= new GreenfootImage("fc.jpeg");
          musicFondo.playLoop();
          musicFondo.setVolume(20);
         cadPuntos.setValue(marvin.getPts());
@@ -123,7 +138,7 @@ public class DiamondMars extends World
               
               
               if(numBarra==2){
-                addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-30);
+                addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-200);
                 addObject(new Barra1(),getWidth()+getWidth()/3,getHeight()-400);
                 numBarra=0;
               }
@@ -163,10 +178,13 @@ public class DiamondMars extends World
         
       
         if(nivel==2 && tiempo.millisElapsed()>=1000){
+            setBackground(back2);
+            //DiamondMars().
             numBarra++;
             numGema10++;
             
             numFuego++;
+            numEnem2++;
             tiempo.mark();
             cadReloj.add(-1);
             numGema20++;
@@ -192,6 +210,12 @@ public class DiamondMars extends World
                 numFuego=0;
             }
             
+            if(numEnem2==4){
+                addObject(new Enemy2(), getWidth()+ getWidth()/3, getHeight()-125);
+                addObject(new Enemy2(), getWidth()+ getWidth()/4, getHeight()-225);
+                numEnem2=0;
+            }
+            
             if(cadVidas.getValue()<=0){
                 removeObject(cadVidas);
                 fin();
@@ -213,7 +237,8 @@ public class DiamondMars extends World
         }
         
             if(nivel==3 && tiempo.millisElapsed()>=1000){
-           
+               
+               setBackground(back3);
                tiempo.mark();
                cadReloj.add(-1);
                numBarra++;
