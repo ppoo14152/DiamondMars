@@ -76,6 +76,14 @@ public class DiamondMarsMenu extends World
                Greenfoot.setWorld(new DiamondMarsCreditos());
             }
        }
+       
+        if(Greenfoot.getMouseInfo()!=null){
+           if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor()==rec){
+               press.play();
+               Greenfoot.delay(5);
+               Greenfoot.setWorld(new DiamondMarsRecords());
+            }
+       }
     }
 }
 

@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Esta clase, contiene el comportamiento de los objetos del juego.
@@ -22,6 +22,7 @@ public class DiamondMars extends World
     private Counter cadReloj, cadVidas,cadPuntos; 
     private Atras atras;
     private GameO imgFin;
+    private GreenfootImage marI;
 
     private GreenfootSound press;
     private int nivel;
@@ -48,9 +49,7 @@ public class DiamondMars extends World
         super(TAM_X,TAM_Y, 1,false);
         setPaintOrder(Marvin.class,Barra1.class,Fuego.class,Gema5.class);
         setActOrder(ImagenEscenario.class,Marvin.class);
-        
-        
-        //imgFin= new GreenfootImage("gameOver.png");
+       
         marvin= new Marvin(); 
         b1= new Barra1();
         fuego1= new Fuego();
@@ -58,6 +57,8 @@ public class DiamondMars extends World
         g5= new Gema5();
         g20=new gema20(); 
         g10=new gema10();
+        nivel2=new Titulo("** Nivel 2 **");
+        nivel3=new Titulo("**Nivel 3**");
         
         tiempo=new SimpleTimer();//tiempo
         cadReloj=new Counter("Tiempo:  ");
@@ -71,7 +72,7 @@ public class DiamondMars extends World
         cadPuntos=new Counter("Puntaje:  ");
         cadPuntos.setValue(0);
         nivel2= new Titulo("Nivel 2");
-      numBarra=0;
+        numBarra=0;
         numGema5=0;
         numGema10=0;
         numGema20=0;
@@ -98,7 +99,6 @@ public class DiamondMars extends World
         addObject(fuego1,getWidth()-getWidth()/7,getHeight()-90);
         addObject(g5,Greenfoot.getRandomNumber(780),250);
         addObject(g10,Greenfoot.getRandomNumber(780),200);
-        addObject(g20,Greenfoot.getRandomNumber(780),350);
         addObject(b1, 200,490);
         addObject(b1,300,480);
         addObject(cadVidas,100,30);
@@ -138,23 +138,24 @@ public class DiamondMars extends World
               
               
               if(numBarra==2){
-                addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-200);
+                addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-150);
                 addObject(new Barra1(),getWidth()+getWidth()/3,getHeight()-400);
                 numBarra=0;
               }
               
               if(numGema5==0){
-                addObject(new Gema5(), Greenfoot.getRandomNumber(780), getHeight()-200);
+                addObject(new Gema5(), getWidth()+getWidth()/4, getHeight()-200);
                 numGema5=0;
               }
               
               if(numGema10==2){
-                addObject(new gema10(),Greenfoot.getRandomNumber(790),getHeight()-280);
+                addObject(new gema10(),getWidth()+getWidth()/4,getHeight()-280);
                 numGema10=0;
               }
 
               if(numFuego==4){
-                addObject(new Fuego(), getWidth()+getWidth()/3, getHeight()-85);
+                addObject(new Fuego(), getWidth()+getWidth()/3, getHeight()-205);
+               
                 numFuego=0;
               }
             if(cadVidas.getValue()==0){
@@ -174,23 +175,24 @@ public class DiamondMars extends World
                 
             }
         }
-        
+       
         
       
         if(nivel==2 && tiempo.millisElapsed()>=1000){
             setBackground(back2);
-            //DiamondMars().
-            numBarra++;
-            numGema10++;
+            //addObject(nivel2,getWidth()/2,getHeight()/2);
             
+            numBarra++;
             numFuego++;
             numEnem2++;
-            tiempo.mark();
-            cadReloj.add(-1);
+            numGema10++;
             numGema20++;
             
+            tiempo.mark();
+            cadReloj.add(-1);
+                  
             if(numBarra==2){
-                addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-30);
+                addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-50);
                 addObject(new Barra1(),getWidth()+getWidth()/2,getHeight()-380);
                 numBarra=0;
             }
@@ -200,8 +202,8 @@ public class DiamondMars extends World
                 numGema10=0;
             }
             
-            if(numGema20==0){
-                addObject(new gema20(), Greenfoot.getRandomNumber(780),getHeight()-280);
+            if(numGema20==1){
+                addObject(g20, Greenfoot.getRandomNumber(780),getHeight()-280);
                 numGema20=0;
             }
 
@@ -235,8 +237,9 @@ public class DiamondMars extends World
                 cadReloj.add(-1);
             }
         }
-        
-            if(nivel==3 && tiempo.millisElapsed()>=1000){
+    
+    
+         if(nivel==3 && tiempo.millisElapsed()>=1000){
                
                setBackground(back3);
                tiempo.mark();
@@ -286,7 +289,7 @@ public class DiamondMars extends World
     }
 
     
-    
+   
     public void setNivel(int unNivel)
     {
         nivel=unNivel;

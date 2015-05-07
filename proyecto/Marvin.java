@@ -17,6 +17,7 @@ public class Marvin extends Actor
     private int pts;
     private int vidas;
     private Enemy2 e2;
+    //private GreenfootImage marI= new GreenfootImage("marvinnaveizq.gif");
     private GreenfootImage mar= new GreenfootImage("marvinnave.gif");
     private GreenfootSound take;
     /**
