@@ -123,17 +123,34 @@ public class DiamondMars extends World
      */
     public void act()
     { 
-        GreenfootImage back2= new GreenfootImage("mars.jpg");
-        GreenfootImage back3= new GreenfootImage("fc.jpeg");
          musicFondo.playLoop();
          musicFondo.setVolume(20);
         cadPuntos.setValue(marvin.getPts());
-        if(nivel==1 && tiempo.millisElapsed()>=1000){
-            numBarra++;
+       switch(nivel){
+           
+        case 1: cambiaNivel1();
+                break;      
+        case 2: cambiaNivel2();
+                break;
+        case 3: cambiaNivel3();
+                break;
+                
+        }
+        
+       }
+       /**
+        * Metodo cambia nivel 1, en este metodo se encuentra el comportamiento del juego en el nivel 1.
+        */
+   
+    public void cambiaNivel1()
+    {
+      
+        if(tiempo.millisElapsed()>=1000){
+              numBarra++;
               numFuego++;
               numGema10++;
               numGema20++; 
-            tiempo.mark();
+              tiempo.mark();
               cadReloj.add(-1);
               
               
@@ -169,24 +186,33 @@ public class DiamondMars extends World
              }
              if(cadPuntos.getValue()>=100){
                 removeObject(cadPuntos);
+               // cadVidas.setValue(3);
+                //cadReloj.setValue(60);
                 marvin.setPts(101);
          
                 //nivel=2;
                 
             }
-        }
-       
+        }  
         
-      
-        if(nivel==2 && tiempo.millisElapsed()>=1000){
-            setBackground(back2);
-            //addObject(nivel2,getWidth()/2,getHeight()/2);
+       
+    }
+    /**
+        * Metodo cambia nivel 2, en este metodo se encuentra el comportamiento del juego en el nivel 2.
+        */
+    
+    public void cambiaNivel2()
+    {
+         GreenfootImage back2= new GreenfootImage("mars.jpg");
+         setBackground(back2);
+         
+        if(tiempo.millisElapsed()>=1000){
             
+            numGema10++;
+            numGema20=0;
             numBarra++;
             numFuego++;
-            numEnem2++;
-            numGema10++;
-            numGema20++;
+            numEnem2++;           
             
             tiempo.mark();
             cadReloj.add(-1);
@@ -202,7 +228,7 @@ public class DiamondMars extends World
                 numGema10=0;
             }
             
-            if(numGema20==1){
+            if(tiempo.millisElapsed()>=1000 || numGema20==0){
                 addObject(g20, Greenfoot.getRandomNumber(780),getHeight()-280);
                 numGema20=0;
             }
@@ -235,11 +261,19 @@ public class DiamondMars extends World
                 nivel=3;
                 tiempo.mark();
                 cadReloj.add(-1);
+                
             }
+            
         }
+    }
+    /**
+        * Metodo cambia nivel 3, en este metodo se encuentra el comportamiento del juego en el nivel 3.
+        */
     
-    
-         if(nivel==3 && tiempo.millisElapsed()>=1000){
+   public void cambiaNivel3()
+   {
+        GreenfootImage back3= new GreenfootImage("fc.jpeg");
+       if(tiempo.millisElapsed()>=1000){
                
                setBackground(back3);
                tiempo.mark();
@@ -272,9 +306,7 @@ public class DiamondMars extends World
                 addObject(new Fuego(), 760, getHeight()-85);
                 addObject(new Fuego(), 670, getHeight()-105);
                 numFuego=0;
-            }
-
-            
+            }            
             
             if(cadReloj.getValue()<=0){
                 removeObject(cadReloj);
@@ -285,11 +317,11 @@ public class DiamondMars extends World
                 removeObject(cadVidas);
                 fin();
             }
-        }
-    }
-
-    
-   
+       }
+     }
+     /**
+        * metodo para poder modificar el nivel del juego.
+        */
     public void setNivel(int unNivel)
     {
         nivel=unNivel;
