@@ -22,7 +22,7 @@ public class ImagenEscenario extends Actor
      */
     public void act() 
     {
-        //if(getWorld().getNivel()==1){
+        
         if(Greenfoot.isKeyDown("left"))
         {
             setLocation(getX()+10,getY());
@@ -33,6 +33,6 @@ public class ImagenEscenario extends Actor
             setLocation(getX()-10,getY());
         }
        
-     //  }    
+        
     }
 }

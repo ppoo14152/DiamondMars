@@ -12,6 +12,7 @@ public class Enemigo extends Actor
     
     public void act() 
     {
+        
          if(Greenfoot.isKeyDown("left"))
         {
             setLocation(getX()+10,getY());
@@ -22,4 +23,5 @@ public class Enemigo extends Actor
         }
        
     }    
-  }    
+  } 
+

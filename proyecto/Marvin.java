@@ -17,9 +17,10 @@ public class Marvin extends Actor
     private int pts;
     private int vidas;
     private Enemy2 e2;
-    //private GreenfootImage marI= new GreenfootImage("marvinnaveizq.gif");
+    private GreenfootImage marI= new GreenfootImage("marvinnaveizq.gif");
     private GreenfootImage mar= new GreenfootImage("marvinnave.gif");
     private GreenfootSound take;
+    private boolean creaObjetos;
     /**
      * metodo constructor de Marvin, en el se especifican las variables
      * de las cuales depende el comportamiento de Marvin
@@ -47,6 +48,8 @@ public class Marvin extends Actor
         mueveMarvin();
         checkFall();
         tomaGemas();
+        tocaEnemigo();
+        checaObjetos();
         subeNivel();
         
    }
@@ -75,14 +78,44 @@ public class Marvin extends Actor
            pts+=20;
            removeTouching(gema20.class);
         }
+       
+    }
+    
+    /**
+     * Este metodo define si se crean o no más objetos(evita la creación de objetos repetitiva al direccionar a marvin
+     * hacia la izquierda
+     */
+    public void checaObjetos()
+    {
+        if(Greenfoot.isKeyDown("right")){
+           /* ((DiamondMars)getWorld()).setCrea(true);
+           ((DiamondMars)(getWorld())).act();*/
+            
+          creaObjetos=true; 
+        }
         
+        if(Greenfoot.isKeyDown("left")){
+          
+            creaObjetos=false;
+           // ((DiamondMars))getWorld().removeObject(Gema5.class gema10.class gema20.class);
+        }
+        
+    }
+    
+     /**
+     * Este método checa si Marvin toca algun enemigo ,
+     * y decrementa puntos.
+     */
+    public void tocaEnemigo()
+    {
+         
         if(this.isTouching(Enemy2.class)){//(Enemy2.class)){
             pts-=20;
             removeTouching(Enemy2.class);
         
         }
+        
     }
-    
    /**
     * Metodo que checa las condiciones necesarias para que suba de nivel 
     * el jugador.
@@ -94,12 +127,12 @@ public class Marvin extends Actor
            ((DiamondMars)(getWorld())).act();
         }
         
-       if(pts>=200 && ((DiamondMars)getWorld()).getNivel()==2){
+       if(pts>=300 && ((DiamondMars)getWorld()).getNivel()==2){
            ((DiamondMars)getWorld()).setNivel(3);
            ((DiamondMars)(getWorld())).act();
         }
         
-       if(pts>=300){
+       if(pts>=600){
            ((DiamondMars)getWorld()).fin();
         }
         
@@ -112,15 +145,16 @@ public class Marvin extends Actor
     { 
     
         if(Greenfoot.isKeyDown("right")){
-          moveDer(); 
+            setImage(mar);
+          //moveDer(); 
         }
         
         if(Greenfoot.isKeyDown("left")){
-           mar.mirrorHorizontally();
-           moveIzq(); 
+            setImage(marI);
         }
         
-        if(Greenfoot.isKeyDown("up")){
+        if(Greenfoot.isKeyDown("up") && (getY()-40)>=0){ 
+            setLocation(getX(),getY()-10);
            saltar();
          }
         if(getY()>=550){//Checa si Marvin cayó de la barra{ 
@@ -174,6 +208,24 @@ public class Marvin extends Actor
           velSalto = velSalto + acel;
         
         }
+          /**
+     * Método que permite modifi car el valor de la vaiable creaObjetos.
+     * @param Un parametro booleano el cual sera el nuevo valor de creaObjetos.
+     */
+    
+    public void setCrea(boolean op)
+    {
+        creaObjetos=op;
+    }
+    
+    /**
+     * Método que permite acceder a la variable creaObjetos.
+     */
+    
+    public boolean getCrea()
+    {
+        return creaObjetos;
+    }
       /**
        * Método que efectua el movimiento hacia la derecha
        */
@@ -198,7 +250,8 @@ public class Marvin extends Actor
       {
           
           if(getX()>=40){
-             setLocation(getX()-1,getY());
+              setLocation(getX()-1,getY());
+              
           }  
                 
           if(tiempo==2){
