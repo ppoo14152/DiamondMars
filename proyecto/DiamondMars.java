@@ -320,7 +320,7 @@ public class DiamondMars extends World
                 
                 numFuego=0;
             }            
-            if(numEnem2==2){
+            if(tiempo.millisElapsed()>=1000 || numEnem2>=2){
                 addObject(new Enemy2(), getWidth(),getHeight()-250);
                 numEnem2=0;
             }

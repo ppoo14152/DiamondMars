@@ -172,7 +172,7 @@ public class Marvin extends Actor
                         
           }
           if(this.isTouching(Barra2.class)){//(Enemy2.class)){
-            setLocation(getX(),getY()+5);
+            onGround();
         
         }
     
