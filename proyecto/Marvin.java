@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Esta clase contiene a Marvin, asi como sus comportamientos en el juego.
@@ -21,6 +22,7 @@ public class Marvin extends Actor
     private GreenfootImage mar= new GreenfootImage("marvinnave.gif");
     private GreenfootSound take;
     private boolean creaObjetos;
+    private GreenfootSound enemS;
     /**
      * metodo constructor de Marvin, en el se especifican las variables
      * de las cuales depende el comportamiento de Marvin
@@ -33,7 +35,8 @@ public class Marvin extends Actor
        jump=10;
        pts=0;
        vidas=3;
-       take=new GreenfootSound("disparolaser.mp3");
+       take=new GreenfootSound("piu.mp3");
+       enemS=new GreenfootSound("enem.mp3");
        
        
     }
@@ -114,6 +117,12 @@ public class Marvin extends Actor
             removeTouching(Enemy2.class);
         
         }
+        if(this.isTouching(Enemy3.class)){//(Enemy2.class)){
+            enemS.play();
+            pts-=50;
+            removeTouching(Enemy3.class);
+        
+        }
         
     }
    /**
@@ -157,11 +166,15 @@ public class Marvin extends Actor
             setLocation(getX(),getY()-10);
            saltar();
          }
-        if(getY()>=550){//Checa si Marvin cayó de la barra{ 
-             //((DiamondMars)getWorld()).stopped();//
-             Greenfoot.stop();
-             
+        if(getY()>=450){//Checa si Marvin cayó de la barra{ 
+           
+             ((DiamondMars)getWorld()).fin();
+                        
           }
+          if(this.isTouching(Barra2.class)){//(Enemy2.class)){
+            setLocation(getX(),getY()+5);
+        
+        }
     
       }
       
@@ -226,40 +239,8 @@ public class Marvin extends Actor
     {
         return creaObjetos;
     }
-      /**
-       * Método que efectua el movimiento hacia la derecha
-       */
-      public void moveDer()
-      {
-         if(getX()<=getWorld().getWidth()/2){
-            setLocation(getX()+1,getY());
-            } 
-                
-          if(tiempo==2)
-          {
-             setImage(mar);
-             tiempo=0;
-           }
-            tiempo++; 
-      }
-      
-      /**
-       * Método que efectua el movimiento hacia la izquierda
-       */
-      public void moveIzq()
-      {
-          
-          if(getX()>=40){
-              setLocation(getX()-1,getY());
-              
-          }  
-                
-          if(tiempo==2){
-             setImage(mar);
-             tiempo=0;
-               }
-          tiempo++;
-      }
+
+     
       /**
        * Método para poder modificar los puntos que tiene marvin.
        */

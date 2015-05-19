@@ -16,8 +16,8 @@ public class Barra2 extends ImagenEscenario
      */
     public Barra2()
     {
-       GreenfootImage imgBarra = new GreenfootImage("A530C0A87.png");
-       imgBarra.scale(imgBarra.getWidth(), imgBarra.getHeight());
+       GreenfootImage imgBarra = new GreenfootImage("barra2.jpg");
+       imgBarra.scale(imgBarra.getWidth()*2, imgBarra.getHeight());
        setImage(imgBarra);
     }
     

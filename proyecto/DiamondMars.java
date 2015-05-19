@@ -39,10 +39,13 @@ public class DiamondMars extends World
     private int numEnem3;
     private GreenfootSound musicFondo;
     private GreenfootSound finGame;
+    private GreenfootSound winGame;
     private Level nivel2;
     private Level nivel3;
     private Level nivel1;
     private boolean creaObjetos;
+    
+    private OrdenaRecords records;
 
     /**
      * En el constructor se inicializan los objetos que conforman el escenario
@@ -69,7 +72,7 @@ public class DiamondMars extends World
 
         tiempo=new SimpleTimer();//tiempo
         cadReloj=new Counter("Tiempo:  ");
-        cadReloj.setValue(60);//valor inicial de 60 segundos
+        cadReloj.setValue(0);//valor inicial de 60 segundos
 
         vidasT=new SimpleTimer();//vidas
         cadVidas=new Counter("Vidas:  ");
@@ -94,8 +97,10 @@ public class DiamondMars extends World
         imgWin=new Winner();
         marG=new Gana();
         press=new GreenfootSound("boton_1.mp3");
-        musicFondo=new GreenfootSound("Nicky Romero - Toulouse.mp3");
+        musicFondo=new GreenfootSound("alien_6.mp3");
         finGame=new GreenfootSound("finJuego.mp3");
+        winGame= new GreenfootSound("winn.mp3");
+        records=new OrdenaRecords();
 
     }
     /** 
@@ -105,7 +110,7 @@ public class DiamondMars extends World
     {
         Greenfoot.setWorld(new DiamondMarsMenu());
         addObject(marvin,100,400);
-        addObject(fuego1,130,getHeight()-90);
+        addObject(fuego1,260,getHeight()-90);
         addObject(g5,Greenfoot.getRandomNumber(780),250);
         addObject(g10,Greenfoot.getRandomNumber(780),200);
         addObject(b1, 200,490);
@@ -114,7 +119,7 @@ public class DiamondMars extends World
         addObject(cadReloj,500,30);
         addObject(cadPuntos,700,30);
         tiempo.mark();
-        cadReloj.add(-1);
+        cadReloj.add(1);
         nivel=1;
         
 
@@ -127,7 +132,7 @@ public class DiamondMars extends World
     public void act()
     { 
         musicFondo.playLoop();
-        musicFondo.setVolume(20);
+        musicFondo.setVolume(40);
         cadPuntos.setValue(marvin.getPts());
         //if(marvin.getCrea()==false)
         switch(nivel){
@@ -146,9 +151,7 @@ public class DiamondMars extends World
 
     public void cambiaNivel1()
     {
-        addObject(nivel1, 100, 30);                       
-        if(marvin.getCrea()==true){
-            
+        addObject(nivel1, 100, 30);                                   
             if(tiempo.millisElapsed()>=1000){
 
                 numBarra++;
@@ -156,11 +159,12 @@ public class DiamondMars extends World
                 numGema10++;
                 numGema20++; 
                 tiempo.mark();
-                cadReloj.add(-1);
+                cadReloj.add(1);
+                if(Greenfoot.isKeyDown("right")){
 
                 if(numBarra==2){
-                    addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-150);
-                    addObject(new Barra1(),getWidth()+getWidth()/3,getHeight()-380);
+                    addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-50);
+                    addObject(new Barra2(),getWidth()+getWidth()/3,getHeight()-380);
                     numBarra=0;
                 }
 
@@ -169,13 +173,13 @@ public class DiamondMars extends World
                     numGema5=0;
                 }
 
-                if(numGema10==2){
+                if(tiempo.millisElapsed()>=1000 || numGema10>=2){
                     addObject(new gema10(),getWidth()+getWidth()/5,getHeight()-300);
                     numGema10=0;
                 }
 
                 if(numFuego==4){
-                    addObject(new Fuego(), getWidth()+getWidth()/3, getHeight()-200);
+                    addObject(new Fuego(), getWidth()+getWidth()/3, getHeight()-100);
                     numFuego=0;
                 }
                 if(cadVidas.getValue()==0){
@@ -183,10 +187,7 @@ public class DiamondMars extends World
                     fin();
 
                 }
-                if(cadReloj.getValue()==0){
-                    removeObject(cadReloj);
-                    fin();
-                }
+                
                 if(cadPuntos.getValue()>=100){
                     removeObject(cadPuntos);
                     // cadVidas.setValue(3);
@@ -197,9 +198,9 @@ public class DiamondMars extends World
                     //nivel=2;
 
                 }
-            }  
-            //}
-            //creaObjetos=false; 
+            }
+              
+           
         }
        
     }
@@ -215,7 +216,7 @@ public class DiamondMars extends World
 
         GreenfootImage back2= new GreenfootImage("mars.jpg");
         setBackground(back2);
-        if(marvin.getCrea()==true){ 
+      
             if(tiempo.millisElapsed()>=1000){
 
                 numGema10++;
@@ -225,11 +226,13 @@ public class DiamondMars extends World
                 numEnem2++;           
 
                 tiempo.mark();
-                cadReloj.add(-1);
+                cadReloj.add(1);
+                
+               
 
-                if(numBarra==2){
-                    addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-50);
-                    addObject(new Barra1(),getWidth()+getWidth()/2,getHeight()-340);
+                if(tiempo.millisElapsed()>=1000 || numBarra>=2){
+                    addObject(new Barra1(),getWidth()+getWidth()/5,getHeight()-50);
+                    addObject(new Barra2(),getWidth()+getWidth()/2,getHeight()-340);
                     numBarra=0;
                 }
 
@@ -238,12 +241,12 @@ public class DiamondMars extends World
                     numGema10=0;
                 }
 
-                if(tiempo.millisElapsed()>=1000 || numGema20==0){
-                    addObject(g20,getWidth()+getWidth()/5,getHeight()-280);
+                if( numGema20==0){
+                    addObject(g20,getWidth()+getWidth()/5,getHeight()-180);
                     numGema20=0;
                 }
 
-                if(numFuego==4){
+                if(tiempo.millisElapsed()>=1000 || numFuego>=2){
                     addObject(new Fuego(), getWidth()+getWidth()/2, getHeight()-95);
                     numFuego=0;
                 }
@@ -259,11 +262,6 @@ public class DiamondMars extends World
                     fin();
                 }
 
-                if(cadReloj.getValue()<=0){
-                    removeObject(cadReloj);
-                    fin();
-                }
-
                 if(cadPuntos.getValue()>=300){
                     removeObject(cadPuntos);
                     marvin.setPts(301);
@@ -273,11 +271,9 @@ public class DiamondMars extends World
                     cadReloj.add(-1);
 
                 }
-
-            }
-        }
-        //  creaObjetos=false;
-    }
+       
+      }
+   }
 
     /**
      * Metodo cambia nivel 3, en este metodo se encuentra el comportamiento del juego en el nivel 3.
@@ -286,14 +282,14 @@ public class DiamondMars extends World
     public void cambiaNivel3()
     {
         removeObject(nivel2);
-        addObject(nivel3, 100,30);
+        
         GreenfootImage back3= new GreenfootImage("fc.jpeg");
-        //if(marvin.getCrea()==true){
+        
         if(tiempo.millisElapsed()>=1000){
-             
+            addObject(nivel3, 100,30); 
             setBackground(back3);
             tiempo.mark();
-            cadReloj.add(-1);
+            cadReloj.add(1);
             numBarra++;
             numGema5++;
             numGema10++;
@@ -301,47 +297,41 @@ public class DiamondMars extends World
             numFuego++;
             numEnem2++;
             numEnem3++;
-
-            if(numBarra==2){
+            
+             if(tiempo.millisElapsed()>=1000 || numBarra>=2){
                 addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-30);
                 numBarra=0;
             }
             if(numGema5>=0){
-                addObject(new Gema5(),getWidth()+getWidth()/4,getHeight()-180);
+                addObject(new Gema5(),getWidth()+getWidth()/4,getHeight()-380);
                 numGema5=0;
             }
             if(numGema10>=0){
-                addObject(new gema10(), getWidth()+getWidth()/2, getHeight()-200);
+                addObject(new gema10(), getWidth()+getWidth()/2, getHeight()-180);
                 numGema10=0;
             }
             if(numGema20>=0){
-                addObject(new gema20(), getWidth()+getWidth()/3,getHeight()-380);
+                addObject(new gema20(), getWidth()+getWidth()/3,getHeight()-300);
                 numGema20=0;
             }
 
-            if(numFuego==4){
-                addObject(new Fuego(), 760, getHeight()-85);
-                addObject(new Fuego(), 670, getHeight()-105);
+            if(tiempo.millisElapsed()>=1000 || numFuego>=2){
+                addObject(new Fuego(), 550, getHeight()-80);
+                
                 numFuego=0;
             }            
             if(numEnem2==2){
-                addObject(new Enemy2(), getWidth(),getHeight()-100);
                 addObject(new Enemy2(), getWidth(),getHeight()-250);
                 numEnem2=0;
             }
             
             if(numEnem3==2){
-                addObject(new Enemy3(), getWidth(),getHeight()-50);
-                addObject(new Enemy3(), getWidth(),getHeight()-350);
+                addObject(new Enemy3(),getWidth()+getWidth()/2,Greenfoot.getRandomNumber(400));
                 numEnem3=0;
             }
-            if(cadReloj.getValue()<=0){
-                removeObject(cadReloj);
-                fin();
-            }
-
             if(cadVidas.getValue()<=0){
                 removeObject(cadVidas);
+                records.almacenaRecords(marvin.getPts());
                 fin();
             }
 
@@ -349,12 +339,11 @@ public class DiamondMars extends World
                 removeObject(cadPuntos);
                 ganaste();
 
-            }
-
-            //  creaObjetos=false;
-        }
-       
+            }          
+        }   
     }
+       
+    
 
     /**
      * metodo para poder modificar el nivel del juego.
@@ -429,27 +418,37 @@ public class DiamondMars extends World
      */
     public void fin()
     {      
-        if((cadVidas.getValue()==0) || (cadReloj.getValue()<=0) ){
+        if((cadVidas.getValue()==0)){
+            removeObject(nivel3);
             removeObjects(getObjects(Actor.class));
             addObject(imgFin,getWidth()/2,getHeight()/2);
+            records.almacenaRecords(marvin.getPts());
             addObject(atras,760,420);
             finGame.play();
             this.stopped();
 
         }
     }
-
+/**
+ * Método para determinar qué hacer cuando se gana el juego.
+ */
     public void ganaste()
     {
         if((cadPuntos.getValue()>=600)){
+            removeObject(nivel3);
             removeObjects(getObjects(Actor.class));
+            records.almacenaRecords(marvin.getPts());
             addObject(imgWin,getWidth()/2,getHeight()-400);
             addObject(marG,getWidth()/2,getHeight()-160);
             addObject(atras,760,420);
+            winGame.play();
             this.stopped();
         }
 
     }
+    /**
+     * Método para inicializar la musica
+     */
 
     public void started()
     {

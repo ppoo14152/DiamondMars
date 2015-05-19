@@ -16,7 +16,7 @@ public class Enemy3 extends Enemigo
     public void act() 
     {
         super.act();
-        move(-15);
+        move(-10);
     }
     
 }

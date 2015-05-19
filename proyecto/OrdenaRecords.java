@@ -18,7 +18,7 @@ public class OrdenaRecords
         }
     }
     
-    public void guardaRecords(int pts)
+    public void almacenaRecords(int pts)
     {
          if((UserInfo.isStorageAvailable()) && (this.player != null) && ((pts> this.player.getScore())) || (this.player.getInt(0))==0){ 
             this.player.setScore(pts);
