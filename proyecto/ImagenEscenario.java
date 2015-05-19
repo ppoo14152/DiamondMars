@@ -1,17 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Escribe una descrición de la clase ImagenEscenario aquí.
+ * Clase que define el comportamiento de las imagene q componen el escenario
  * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
+ * @author (Angélica María Infante Barbosa) 
+ * @version (18 mayo 2015)
  */
 public class ImagenEscenario extends Actor
 {
-    /**
-     * Act - hace lo que imagenFondo quiere hacer. Este método se llama "cuando quiera" o whenever
-     * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
-     */
     public ImagenEscenario()
     {
         

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Gema5 here.
+ *Clase que define la imagen de las gemas
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Angélica María Infante Barbosa) 
+ * @version (17 mayo 2015)
  */
 public class Gema5 extends Gema
 {
@@ -17,7 +17,9 @@ public class Gema5 extends Gema
         cant=5;
      
     }
-   
+   /**
+    * Método actúa
+    */
     public void act() 
     {
       super.act();

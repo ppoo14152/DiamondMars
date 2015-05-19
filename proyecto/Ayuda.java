@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ayuda here.
+ * Clase que define la imagen del boton de ayuda
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Angélica María Infante Barbosa) 
+ * @version (18 mayo 2015)
  */
 public class Ayuda extends Portada
 {
@@ -15,22 +15,5 @@ public class Ayuda extends Portada
       ayuda = new GreenfootImage("bottonAyuda.png");
       setImage(ayuda);  
     }
-    /**
-     * Act - do whatever the Ayuda wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-  /*  public void act() 
-    {
-       
-               
-        if(Greenfoot.mouseClicked(this))
-        {
-         // ((DiamondMars)getWorld()).cambiaNivel();
-            getWorld().removeObject(this);
-                    imagenPosicion=0;
-        }
-            
-      
-    }     // Add your action code here.
-    }*/    
+     
 }

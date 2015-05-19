@@ -1,14 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Enemigo here.
+ * Define por default el movimiento de los enemigos
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Angélica María Infante Barbosa) 
+ * @version (18 mayo 2015)
  */
 public class Enemigo extends Actor
 {
     private boolean choca=false;
+    /**
+     * Método actua de clase enemigo
+     */
     
     public void act() 
     {

@@ -1,19 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Escribe una descrición de la clase Fuego aquí.
+ * Clase Fuego, en ella se muestran los principales comportamientos del enemigo fuego
  * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
+ * @autor (Angélica María Infante Barbosa  ) 
+ * @versión (18 mayo 2015)
  */
 public class Fuego extends Enemigo
 {
     private GreenfootImage fuego1;
     private GreenfootSound quema;
+    
     /**
-     * Act - hace lo que Fuego quiere hacer. Este método se llama "cuando quiera" o whenever
-     * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
-     * metodo donde se inicializa la imagen de este actor
+     * Método contructor de la clase
      */
     public Fuego()
     {
@@ -23,7 +22,9 @@ public class Fuego extends Enemigo
     }
     
     /**
-     * metodo para llamar al contructor de la clase padre
+     * Act - hace lo que Fuego quiere hacer. Este método se llama "cuando quiera" o whenever
+     * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
+     * metodo donde se inicializa la imagen de este actor
      */
     public void act() 
     {

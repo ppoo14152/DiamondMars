@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Atras here.
+ * Clase que define la imagen regresar, así como su comportamiento.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Angélica María Infante Barbosa) 
+ * @version (18 mayo 2015)
  */
 public class Atras extends Portada
 {

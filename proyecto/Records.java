@@ -1,17 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Records here.
+ * Clase que define la imagen del boton de records
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Angélica María Infante Barbosa) 
+ * @version (18 mayo 2015)
  */
 public class Records extends Portada
 {
     private GreenfootImage record;
     /**
-     * Act - do whatever the Records wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * método constructor de la clase records
      */
     public Records() 
     {

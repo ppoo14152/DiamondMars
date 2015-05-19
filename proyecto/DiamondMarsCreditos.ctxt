@@ -4,4 +4,5 @@ comment0.target=DiamondMarsCreditos()
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ DiamondMarsCreditos.\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ M\u00E9todo\ que\ define\ que\ hacer\ si\ se\ toca\ el\ bot\u00F3n\ de\ atras\r\n\ \r\n
 numComments=2

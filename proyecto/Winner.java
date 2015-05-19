@@ -1,23 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Winner here.
+ * Clase que define la imagen que complementa la imagen Ganador
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Angélica María Infante Barbosa) 
+ * @version (18 mayo 2015)
  */
 public class Winner extends Portada
 {
     private GreenfootImage wi;
     /**
-     * Act - do whatever the Winner wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Método constructor de la clase winner, en ella se crea la imagen.
      */
     public Winner() 
     {
         wi = new GreenfootImage("winner.png");
       setImage(wi);  
     }   
-        // Add your action code here.
+        
     }    
 

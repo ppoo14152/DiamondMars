@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class DiamondMarsCreditos here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Angélica María Infante Barbosa) 
+ * @version (15.mayo.2015)
  */
 public class DiamondMarsCreditos extends World
 {
@@ -23,6 +23,10 @@ public class DiamondMarsCreditos extends World
         addObject(imgAtras,750,450);
         press=new GreenfootSound("boton_1.mp3");
     }
+    /**
+     * Método que define que hacer si se toca el botón de atras
+     * 
+     */
      public void act()
     {
         if(Greenfoot.getMouseInfo()!=null){

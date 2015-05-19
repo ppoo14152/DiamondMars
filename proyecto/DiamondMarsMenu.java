@@ -37,6 +37,10 @@ public class DiamondMarsMenu extends World
          posiciona();
     }
     
+    /**
+     * El método posiciona, se encarga de ubicar en el escenario los distintos botones del menú.
+     */
+    
     public void posiciona()
     {
         addObject(jugar, getWidth()/2+200,getHeight()/2-100);

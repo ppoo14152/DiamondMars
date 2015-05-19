@@ -1,22 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ImgIni here.
+ * Clase que define la imagen dee inicio de la portada
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Angélica María Infante Barbosa) 
+ * @version (18 mayo 2015)
  */
 public class ImgIni extends Portada
 {
     private GreenfootImage imgIni;
     /**
-     * Act - do whatever the ImgIni wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Método constructor que permite crear la imagen de inicio del juego
      */
     public ImgIni()
     {
         imgIni=new GreenfootImage("marvinFondo.png");
-       // imgIni.scale((getWidth())*2, (getHeight())*2);
         imgIni.scale(250,350);
         setImage(imgIni);
         

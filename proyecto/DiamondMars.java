@@ -320,7 +320,7 @@ public class DiamondMars extends World
                 
                 numFuego=0;
             }            
-            if(tiempo.millisElapsed()>=1000 || numEnem2>=2){
+            if(numEnem2==2){
                 addObject(new Enemy2(), getWidth(),getHeight()-250);
                 numEnem2=0;
             }
@@ -366,6 +366,8 @@ public class DiamondMars extends World
 
     /**
      * metodo getter para acceder a los puntos que son privados
+     * 
+     * @return Counter, regresa el contador con la cadena de puntos
      */
     public Counter getPuntos()
     {
@@ -374,6 +376,7 @@ public class DiamondMars extends World
 
     /**
      * Metodo para acceder a las vidas, ya que son privadas
+     * @return Counter, regresa el contador con la cadena de Vidas
      */
 
     public Counter getVidas()
@@ -383,6 +386,7 @@ public class DiamondMars extends World
 
     /**
      * Método que permite acceder a Marvin ya que es privado.
+     * @return Marvin, regresa el actor Marvin
      */
     public Marvin getMarvin()
     {
@@ -391,6 +395,7 @@ public class DiamondMars extends World
 
     /**
      * Método que permite acceder a la gema azul privada.
+     * @return Gema5, regresa una gema de valor 5 puntos.
      */
     public Gema5 getGema5()
     {
@@ -399,6 +404,7 @@ public class DiamondMars extends World
 
     /**
      * Metodo que permite acceder a la gema verde privada.
+     *  @return Gema10, regresa una gema de valor 10 puntos.
      */
     public gema10 getGema10()
     {
@@ -407,6 +413,7 @@ public class DiamondMars extends World
 
     /**
      * Metodo para acceder a la gema roja. Ya que es privada
+     *  @return Gema20, regresa una gema de valor 20 puntos.
      */
     public gema20 getGema20()
     {

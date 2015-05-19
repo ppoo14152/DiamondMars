@@ -17,7 +17,9 @@ public class OrdenaRecords
           this.player = UserInfo.getMyInfo();
         }
     }
-    
+    /**
+     * Método que define la manera en que se guardarán los records
+     */
     public void almacenaRecords(int pts)
     {
          if((UserInfo.isStorageAvailable()) && (this.player != null) && ((pts> this.player.getScore())) || (this.player.getInt(0))==0){ 

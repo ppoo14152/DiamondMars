@@ -1,17 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Gana here.
+ * Clase que define la imagen ganador
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Angélica María Infante Barbosa) 
+ * @version (18 mayo 2015)
  */
 public class Gana extends Portada
 {
     private GreenfootImage mG;
     /**
-     * Act - do whatever the Gana wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Método constructor de la clase Gana
      */
     public Gana() 
     {

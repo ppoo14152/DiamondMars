@@ -52,7 +52,6 @@ public class Marvin extends Actor
         checkFall();
         tomaGemas();
         tocaEnemigo();
-        checaObjetos();
         subeNivel();
         
    }
@@ -84,26 +83,6 @@ public class Marvin extends Actor
        
     }
     
-    /**
-     * Este metodo define si se crean o no más objetos(evita la creación de objetos repetitiva al direccionar a marvin
-     * hacia la izquierda
-     */
-    public void checaObjetos()
-    {
-        if(Greenfoot.isKeyDown("right")){
-           /* ((DiamondMars)getWorld()).setCrea(true);
-           ((DiamondMars)(getWorld())).act();*/
-            
-          creaObjetos=true; 
-        }
-        
-        if(Greenfoot.isKeyDown("left")){
-          
-            creaObjetos=false;
-           // ((DiamondMars))getWorld().removeObject(Gema5.class gema10.class gema20.class);
-        }
-        
-    }
     
      /**
      * Este método checa si Marvin toca algun enemigo ,
@@ -167,12 +146,12 @@ public class Marvin extends Actor
            saltar();
          }
         if(getY()>=450){//Checa si Marvin cayó de la barra{ 
-           
+             //((DiamondMars)getWorld()).stopped();//
              ((DiamondMars)getWorld()).fin();
                         
           }
           if(this.isTouching(Barra2.class)){//(Enemy2.class)){
-            onGround();
+            setLocation(getX(),getY()+5);
         
         }
     
@@ -190,6 +169,7 @@ public class Marvin extends Actor
       
     /**
      * Metodo onGround, en este metodo se checa si Marvin toca una barra o no.
+     * @return boolean true or false, si toca o no la barra de apoyo
      */  
       public boolean onGround()
       {
@@ -231,18 +211,10 @@ public class Marvin extends Actor
         creaObjetos=op;
     }
     
-    /**
-     * Método que permite acceder a la variable creaObjetos.
-     */
-    
-    public boolean getCrea()
-    {
-        return creaObjetos;
-    }
-
      
       /**
        * Método para poder modificar los puntos que tiene marvin.
+       * @param int una cantidad de puntos.
        */
       public void setPts(int aPts)
       {
@@ -251,6 +223,7 @@ public class Marvin extends Actor
       
       /**
        * Método que permite acceder a los puntos
+       * @return regresa la cantidad de puntos
        */
       public int getPts()
       {
@@ -259,6 +232,7 @@ public class Marvin extends Actor
       
       /**
        * Método que permite acceder a las vidas
+       * @return regresa las vidas que hay.
        */
       public int getVidas()
       {

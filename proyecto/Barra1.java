@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Barra1 here.
+ * Clase que define la imagen que representa la barra del juego
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Angélica María Infante Barbosa) 
+ * @version (18 mayo 2015)
  */
 public class Barra1 extends ImagenEscenario
 {
@@ -30,3 +30,4 @@ public class Barra1 extends ImagenEscenario
         super.act();
     }    
 }
+

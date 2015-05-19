@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Fuego()
-comment0.text=\r\n\ Act\ -\ hace\ lo\ que\ Fuego\ quiere\ hacer.\ Este\ m\u00E9todo\ se\ llama\ "cuando\ quiera"\ o\ whenever\r\n\ los\ botones\ 'Actuar\ or\ 'Ejecutar'\ son\ presionados\ en\ el\ entorno.\r\n\ metodo\ donde\ se\ inicializa\ la\ imagen\ de\ este\ actor\r\n
+comment0.text=\r\n\ M\u00E9todo\ contructor\ de\ la\ clase\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ metodo\ para\ llamar\ al\ contructor\ de\ la\ clase\ padre\r\n
+comment1.text=\r\n\ Act\ -\ hace\ lo\ que\ Fuego\ quiere\ hacer.\ Este\ m\u00E9todo\ se\ llama\ "cuando\ quiera"\ o\ whenever\r\n\ los\ botones\ 'Actuar\ or\ 'Ejecutar'\ son\ presionados\ en\ el\ entorno.\r\n\ metodo\ donde\ se\ inicializa\ la\ imagen\ de\ este\ actor\r\n
 numComments=2

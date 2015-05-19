@@ -1,5 +1,5 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Winner()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Winner\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.text=\r\n\ M\u00E9todo\ constructor\ de\ la\ clase\ winner,\ en\ ella\ se\ crea\ la\ imagen.\r\n
 numComments=1
