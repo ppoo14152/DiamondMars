@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Enemy3()
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Enemy3\r\n
 comment1.params=
 comment1.target=void\ act()
 numComments=2

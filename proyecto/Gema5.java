@@ -9,7 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Gema5 extends Gema
 {
     private int cant;
-    
+    /**
+     * Constructor de la Gema5
+     */
     public Gema5()
     {
         GreenfootImage imagen = new GreenfootImage("gema3.gif");

@@ -10,6 +10,9 @@ public class Ayuda extends Portada
 {
     private GreenfootImage ayuda; 
     
+    /**
+     * Constructor de la clase Ayuda
+     */
     public Ayuda()
     {
       ayuda = new GreenfootImage("bottonAyuda.png");

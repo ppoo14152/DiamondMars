@@ -10,8 +10,7 @@ public class Jugar extends Portada
 {
     private GreenfootImage juega;
     /**
-     * Act - do whatever the boton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor de la clase jugar
      */
    public Jugar()
     {

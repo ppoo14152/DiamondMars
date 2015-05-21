@@ -10,7 +10,9 @@ public class Atras extends Portada
 {
     private GreenfootImage atras;
     private GreenfootSound press;
-    
+    /**
+     * Constructor de la clase Atras
+     */
     public Atras()
     {
         atras= new GreenfootImage("atras.png");

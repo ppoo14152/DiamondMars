@@ -12,24 +12,15 @@ public class DiamondMars extends World
     public static final int TAM_X=800;
     public static final int TAM_Y=500;
     private Marvin marvin;
-    private Fuego fuego1;
-    private Enemy2 enemigo2;
-    private Enemy3 enemigo3;
-    private Barra1 b1;
-    private Gema5 g5;
-    private gema10 g10;
-    private gema20 g20;
+       
     private SimpleTimer tiempo, vidasT, puntosT;
     private Counter cadReloj, cadVidas,cadPuntos; 
     private Atras atras;
     private GameO imgFin;
     private Winner imgWin;
     private Gana marG;
-    private GreenfootImage marI;
-
-    private GreenfootSound press;
-    private int nivel;
-    private Counter pts;
+  
+private int nivel;
     private int numBarra;
     private int numGema5;
     private int numGema10;
@@ -37,14 +28,13 @@ public class DiamondMars extends World
     private int numFuego;
     private int numEnem2;
     private int numEnem3;
+    private GreenfootSound press;
     private GreenfootSound musicFondo;
     private GreenfootSound finGame;
     private GreenfootSound winGame;
     private Level nivel2;
     private Level nivel3;
     private Level nivel1;
-    private boolean creaObjetos;
-    
     private OrdenaRecords records;
 
     /**
@@ -56,16 +46,10 @@ public class DiamondMars extends World
     { 
         super(TAM_X,TAM_Y, 1,false);
         setPaintOrder(Marvin.class,Barra1.class,Fuego.class,Gema5.class);
-        setActOrder(ImagenEscenario.class,Marvin.class);
+        setActOrder(Marvin.class,ImagenEscenario.class);
 
         marvin= new Marvin(); 
-        b1= new Barra1();
-        fuego1= new Fuego();
-        enemigo2= new Enemy2();
-        enemigo3=new Enemy3();
-        g5= new Gema5();
-        g20=new gema20(); 
-        g10=new gema10();
+             
         nivel1= new Level("*Nivel 1*");
         nivel2=new Level("** Nivel 2 **");
         nivel3=new Level("***Nivel 3***");
@@ -89,7 +73,6 @@ public class DiamondMars extends World
         numFuego=0;
         numEnem2=0;
         numEnem3=0;
-        creaObjetos=false;
 
         prepare();
         atras=new Atras();
@@ -110,11 +93,10 @@ public class DiamondMars extends World
     {
         Greenfoot.setWorld(new DiamondMarsMenu());
         addObject(marvin,100,400);
-        addObject(fuego1,260,getHeight()-90);
-        addObject(g5,Greenfoot.getRandomNumber(780),250);
-        addObject(g10,Greenfoot.getRandomNumber(780),200);
-        addObject(b1, 200,490);
-        addObject(b1,300,480);
+        addObject(new Fuego(),260,getHeight()-90);
+        addObject(new Gema5(),Greenfoot.getRandomNumber(780),250);
+        addObject(new gema10(),Greenfoot.getRandomNumber(780),200);
+        addObject(new Barra1(),300,480);
         addObject(cadVidas,300,30);
         addObject(cadReloj,500,30);
         addObject(cadPuntos,700,30);
@@ -134,7 +116,7 @@ public class DiamondMars extends World
         musicFondo.playLoop();
         musicFondo.setVolume(40);
         cadPuntos.setValue(marvin.getPts());
-        //if(marvin.getCrea()==false)
+        
         switch(nivel){
             case 1: cambiaNivel1();
             break;      
@@ -161,17 +143,19 @@ public class DiamondMars extends World
                 tiempo.mark();
                 cadReloj.add(1);
                 if(Greenfoot.isKeyDown("right")){
-
                 if(numBarra==2){
+                   
                     addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-50);
                     addObject(new Barra2(),getWidth()+getWidth()/3,getHeight()-380);
                     numBarra=0;
-                }
+                
+            }
 
                 if(numGema5==0){
-                    addObject(new Gema5(), getWidth()+getWidth()/4, getHeight()-250);
+                   addObject(new Gema5(), getWidth()+getWidth()/4, getHeight()-250);
                     numGema5=0;
-                }
+                
+            }
 
                 if(tiempo.millisElapsed()>=1000 || numGema10>=2){
                     addObject(new gema10(),getWidth()+getWidth()/5,getHeight()-300);
@@ -190,21 +174,14 @@ public class DiamondMars extends World
                 
                 if(cadPuntos.getValue()>=100){
                     removeObject(cadPuntos);
-                    // cadVidas.setValue(3);
-                    //cadReloj.setValue(60);
                     marvin.setPts(101);
-                    
-
-                    //nivel=2;
-
-                }
+                   }
             }
               
            
         }
-       
     }
-
+    
     /**
      * Metodo cambia nivel 2, en este metodo se encuentra el comportamiento del juego en el nivel 2.
      */
@@ -228,7 +205,7 @@ public class DiamondMars extends World
                 tiempo.mark();
                 cadReloj.add(1);
                 
-               
+                
 
                 if(tiempo.millisElapsed()>=1000 || numBarra>=2){
                     addObject(new Barra1(),getWidth()+getWidth()/5,getHeight()-50);
@@ -242,7 +219,7 @@ public class DiamondMars extends World
                 }
 
                 if( numGema20==0){
-                    addObject(g20,getWidth()+getWidth()/5,getHeight()-180);
+                    addObject(new gema20(),getWidth()+getWidth()/5,getHeight()-180);
                     numGema20=0;
                 }
 
@@ -251,7 +228,7 @@ public class DiamondMars extends World
                     numFuego=0;
                 }
 
-                if(numEnem2==4){
+                if(numEnem2==2){
                     addObject(new Enemy2(), getWidth()+ getWidth()/3, getHeight()-125);
                     addObject(new Enemy2(), getWidth()+ getWidth()/4, getHeight()-225);
                     numEnem2=0;
@@ -265,14 +242,12 @@ public class DiamondMars extends World
                 if(cadPuntos.getValue()>=300){
                     removeObject(cadPuntos);
                     marvin.setPts(301);
-
-                    nivel=3;
-                    tiempo.mark();
-                    cadReloj.add(-1);
-
+                   nivel=3;
+                    
                 }
+            }
        
-      }
+      
    }
 
     /**
@@ -297,7 +272,7 @@ public class DiamondMars extends World
             numFuego++;
             numEnem2++;
             numEnem3++;
-            
+             
              if(tiempo.millisElapsed()>=1000 || numBarra>=2){
                 addObject(new Barra1(),getWidth()+getWidth()/4,getHeight()-30);
                 numBarra=0;
@@ -338,7 +313,7 @@ public class DiamondMars extends World
             if(cadPuntos.getValue()>=600){
                 removeObject(cadPuntos);
                 ganaste();
-
+            
             }          
         }   
     }
@@ -393,32 +368,7 @@ public class DiamondMars extends World
         return marvin;
     }
 
-    /**
-     * Método que permite acceder a la gema azul privada.
-     * @return Gema5, regresa una gema de valor 5 puntos.
-     */
-    public Gema5 getGema5()
-    {
-        return g5;
-    }
-
-    /**
-     * Metodo que permite acceder a la gema verde privada.
-     *  @return Gema10, regresa una gema de valor 10 puntos.
-     */
-    public gema10 getGema10()
-    {
-        return g10;
-    }
-
-    /**
-     * Metodo para acceder a la gema roja. Ya que es privada
-     *  @return Gema20, regresa una gema de valor 20 puntos.
-     */
-    public gema20 getGema20()
-    {
-        return g20;
-    }
+    
 
     /**
      * Método para terminar el juego, checando cuantas vidas hay y cuanto tiempo hay
@@ -453,25 +403,15 @@ public class DiamondMars extends World
         }
 
     }
-    /**
-     * Método para inicializar la musica
-     */
-
-    public void started()
-    {
-        super.started();
-        musicFondo.play();
-
-    }
-
+  
     /**
      * metodo para detener el juego.
      */
     public void stopped() 
     {
         super.stopped();
-        // finGame.pause();
         musicFondo.pause();
 
     }
-}
+   }
+

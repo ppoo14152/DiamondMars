@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Fuego extends Enemigo
 {
-    private GreenfootImage fuego1;
+    
     private GreenfootSound quema;
     
     /**

@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Gema here.
+ * Clase que contiene como subclases a las gemas del juego, 
+ * aqui se define el comportamiento de movimiento de las gemas.
  * 
  * @author (Angélica María Infante Barbosa) 
  * @version (15 mayo 2015)

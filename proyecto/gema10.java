@@ -10,6 +10,9 @@ public class gema10 extends Gema
 {
     private int cant;
     
+   /**
+    * Constructor de la Gema10
+    */
     public void Gema10()
     {
         GreenfootImage imagen = new GreenfootImage("gem1.gif");

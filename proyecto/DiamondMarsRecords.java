@@ -18,7 +18,6 @@ public class DiamondMarsRecords extends World
      */
     public DiamondMarsRecords()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 500, 1); 
          
         score=new ScoreBoard(600, 400);

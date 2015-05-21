@@ -8,7 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy3 extends Enemigo
 {
-     public Enemy3()
+    /**
+     * Constructor de la clase Enemy3
+     */
+    public Enemy3()
     {
         GreenfootImage e3 = new GreenfootImage("1563.gif");
         setImage(e3);

@@ -10,15 +10,16 @@ public class DiamondMarsMenu extends World
 {
     
     private GreenfootImage fmenu;
-    private Jugar jugar;
-    private Ayuda ayuda;
-    private Creditos cred;
-    private Records rec;
-    private ImgIni img;
     private MouseInfo mInf;
     private GreenfootSound press;
-    
     private Titulo tittle;
+    private ImgIni img;
+    
+    private Jugar jugar;
+    private Records rec;
+    private Creditos cred;
+    private Ayuda ayuda;
+    
     /**
      * Constructor for objects of class DiamondMarsMenu. Posiciona los botones del menú
      * 
@@ -26,12 +27,12 @@ public class DiamondMarsMenu extends World
     public DiamondMarsMenu()
     {    
          super(800, 500, 1);
-         jugar= new Jugar();
-         ayuda= new Ayuda();
-         cred= new Creditos();
-         rec= new Records();
-         img= new ImgIni();
          press=new GreenfootSound("boton_1.mp3");
+         jugar=new Jugar();
+         cred=new Creditos();
+         ayuda=new Ayuda();
+         rec=new Records();
+         img=new ImgIni();
          
          tittle=new Titulo("DiamondMars");
          posiciona();

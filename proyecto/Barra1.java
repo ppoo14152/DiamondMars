@@ -10,9 +10,7 @@ public class Barra1 extends ImagenEscenario
 {
    
     /**
-     * Act - hace lo que Barra1 quiere hacer. Este método se llama "cuando quiera" o whenever
-     * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
-     * metodo donde se inicializa la imagen de este actor
+     * Constructor
      */
     public Barra1()
     {

@@ -9,6 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GameO extends Portada
 {
     private GreenfootImage gO;
+    /**
+     * Constructor de la clase GameO
+     */
    
      public GameO()
     {

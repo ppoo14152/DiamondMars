@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
-*Clase que define la imaen de las gemas
+*Clase que define la imagen de las gemas
  * 
  * @author (Angélica María Infante Barbosa) 
  * @version (18 mayo 2015)
@@ -9,7 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class gema20 extends Gema
 {
    private int cant;
-    
+    /**
+     * constructor de la gema20
+     */
     public void Gema20()
     {
         GreenfootImage imagen= new GreenfootImage("gema4.gif");

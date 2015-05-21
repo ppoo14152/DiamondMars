@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemigo extends Actor
 {
-    private boolean choca=false;
+  
     /**
      * Método actua de clase enemigo
      */
